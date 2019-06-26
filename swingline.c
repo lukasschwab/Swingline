@@ -726,10 +726,10 @@ void print_usage(char* prog)
 
 Config* parse_args(int argc, char** argv)
 {
-    unsigned n = 1000;
+    unsigned n = 10000;
     float r = 0.01f;
-    int iter = -1;
-    const char* out = NULL;
+    int iter = 10;
+    const char* out = "./out.svg";
 
     while (true)
     {
@@ -897,8 +897,8 @@ int main(int argc, char** argv)
             fprintf(f,
                 "    <circle cx=\"%f\" cy=\"%f\" r=\"%f\" fill=\"black\" />\n",
                 c->width*pts[i][0], c->height - c->height*pts[i][1],
-                c->radius * fmin(c->sx, c->sy) * fmin(c->width, c->height) *
-                    pts[i][2]);
+                c->radius * fmin(c->sx, c->sy) * fmin(c->width, c->height) * pts[i][2]); // With scaled stipples.
+                // c->radius * fmin(c->sx, c->sy) * fmin(c->width, c->height)); // Without scaled stipples.
         }
 
         free(pts);

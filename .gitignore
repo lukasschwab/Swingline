@@ -1,1 +1,6 @@
+# Build artifacts
 swingline
+*.dSYM
+
+# Output
+*.svg
