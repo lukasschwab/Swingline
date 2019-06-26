@@ -1,6 +1,10 @@
 swingline: swingline.c
 	gcc -Wall -Wextra -lglfw -lepoxy -framework OpenGL -g -o $@ $<
+
 clean:
+	rm -rf swingline.dSYM
+
+veryclean: clean
 	rm -f swingline
 
 demo:
